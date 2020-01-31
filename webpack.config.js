@@ -12,6 +12,9 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },
+  externals: {
+    react: 'React',
+  },
   module: {
     rules: [{
       test: /\.tsx?$/,
@@ -20,6 +23,8 @@ module.exports = {
     }]
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: "./index.html"
+    })
   ]
 }
